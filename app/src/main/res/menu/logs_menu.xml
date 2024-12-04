@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Share button -->
+    <item
+        android:id="@+id/action_share"
+        android:icon="@drawable/ic_share"
+        android:title="@string/share_log"
+        app:showAsAction="always" />
+
+    <!-- Change Directory button -->
+    <item
+        android:id="@+id/action_change_directory"
+        android:icon="@drawable/ic_folder"
+        android:title="@string/change_directory"
+        app:showAsAction="ifRoom" />
+</menu>

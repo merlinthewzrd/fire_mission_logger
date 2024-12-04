@@ -6,6 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -18,10 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="10dp"
-        android:paddingTop="@android:dimen/app_icon_size"
-        android:weightSum="1"
-        android:gravity="center">
+        android:weightSum="1">
 
         <!-- Save and Clear Buttons -->
 
@@ -232,7 +233,7 @@
                         android:maxWidth="320dp"
                         android:minHeight="48dp"
                         android:textColorHint="@color/white"
-                        tools:ignore="Autofill,DuplicateSpeakableTextCheck" />
+                        tools:ignore="Autofill,DuplicateSpeakableTextCheck,TextContrastCheck" />
 
                     <!-- Time Sent -->
                     <Button
@@ -414,6 +415,8 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
     <!-- Navigation Drawer -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"

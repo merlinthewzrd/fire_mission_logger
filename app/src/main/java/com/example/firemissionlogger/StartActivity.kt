@@ -1,11 +1,11 @@
 package com.example.firemissionlogger
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-
 
 class StartActivity : BaseActivity() {
 
@@ -13,15 +13,24 @@ class StartActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
 
-        // Set up the navigation drawer
-        setupNavigationDrawer(R.id.drawer_layout, R.id.nav_view, R.id.toolbar)
-
         // Reference to the callsign input
         val callsignInput = findViewById<EditText>(R.id.callsignInput)
+
+        // Load the saved callsign from SharedPreferences
+        val sharedPref = getSharedPreferences("FireMissionPrefs", Context.MODE_PRIVATE)
+        val savedCallsign = sharedPref.getString("CALLSIGN", "")
+        callsignInput.setText(savedCallsign) // Restore saved callsign if it exists
 
         // Function to handle the intent with the callsign
         fun navigateToActivity(callsign: String, targetActivity: Class<*>) {
             if (callsign.isNotEmpty()) {
+                // Save the callsign to SharedPreferences
+                with(sharedPref.edit()) {
+                    putString("CALLSIGN", callsign)
+                    apply()
+                }
+
+                // Navigate to the target activity
                 val intent = Intent(this, targetActivity)
                 intent.putExtra("CALLSIGN", callsign)
                 startActivity(intent)
@@ -34,14 +43,14 @@ class StartActivity : BaseActivity() {
         val fox1LoggerButton = findViewById<Button>(R.id.btnFox1Logger)
         fox1LoggerButton.setOnClickListener {
             val callsign = callsignInput.text.toString()
-            navigateToActivity(callsign, Fox1LoggerActivity::class.java)
+            navigateToActivity(callsign, Fox1Activity::class.java)
         }
 
-        // Button for FOX 2 Logger (MainActivity)
+        // Button for FOX 2 Logger
         val fox2LoggerButton = findViewById<Button>(R.id.btnFox2Logger)
         fox2LoggerButton.setOnClickListener {
             val callsign = callsignInput.text.toString()
-            navigateToActivity(callsign, MainActivity::class.java)
+            navigateToActivity(callsign, Fox2Activity::class.java)
         }
 
         // Button for LOGS

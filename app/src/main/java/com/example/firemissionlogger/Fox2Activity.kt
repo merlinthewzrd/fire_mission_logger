@@ -9,27 +9,30 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
 
-class Fox1LoggerActivity : BaseActivity() {
+class Fox2Activity : BaseActivity() {
 
     private lateinit var targetNumber: EditText
-    private lateinit var tgtGrid: EditText
-    private lateinit var tgtShape: EditText
     private lateinit var numRounds: EditText
     private lateinit var typeRounds: EditText
     private lateinit var unitToFire: EditText
     private lateinit var methodControl: EditText
-    private lateinit var typeMission: EditText
+    private lateinit var sheaf: EditText
     private lateinit var timeReceived: EditText
     private lateinit var timeSent: EditText
+    private lateinit var gunsReady: EditText
+    private lateinit var shot: EditText
+    private lateinit var roundsComplete: EditText
     private lateinit var endOfMission: EditText
     private lateinit var notes: EditText
-    private lateinit var howRcvd: EditText
+    private lateinit var charge: EditText
+    private lateinit var fuze: EditText
     private lateinit var spinnerHowSent: Spinner
     private lateinit var spinnerRecalc: Spinner
 
@@ -39,27 +42,34 @@ class Fox1LoggerActivity : BaseActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fox1_logger)
+        setContentView(R.layout.activity_fox2)
         setupNavigationDrawer(R.id.drawer_layout, R.id.nav_view, R.id.toolbar)
 
         // Retrieve the callsign from the Intent
-        intent.getStringExtra("CALLSIGN_KEY") ?: "default_callsign"
+        val callsign = intent.getStringExtra("CALLSIGN") ?: "default_callsign"
+
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.title = "FOX 2 - $callsign"
+
         // Initialize input fields
         targetNumber = findViewById(R.id.targetNumber)
-        tgtGrid = findViewById(R.id.tgtGrid)
-        tgtShape = findViewById(R.id.tgtShape)
-        unitToFire = findViewById(R.id.unitToFire)
         numRounds = findViewById(R.id.numRounds)
         typeRounds = findViewById(R.id.typeRounds)
+        unitToFire = findViewById(R.id.unitToFire)
         methodControl = findViewById(R.id.methodControl)
-        typeMission = findViewById(R.id.typeMission)
+        sheaf = findViewById(R.id.sheaf)
         notes = findViewById(R.id.notes)
-        howRcvd = findViewById(R.id.howRcvd)
+        charge = findViewById(R.id.charge)
+        fuze = findViewById(R.id.fuze)
 
 
         // Initialize timestamp EditTexts
         timeReceived = findViewById(R.id.timeReceived)
         timeSent = findViewById(R.id.timeSent)
+        gunsReady = findViewById(R.id.gunsReady)
+        shot = findViewById(R.id.shot)
+        roundsComplete = findViewById(R.id.roundsComplete)
         endOfMission = findViewById(R.id.endOfMission)
 
         //Initialize spinners
@@ -69,6 +79,9 @@ class Fox1LoggerActivity : BaseActivity() {
         // Initialize buttons and set onClickListeners
         findViewById<Button>(R.id.btnTimeReceived).setOnClickListener { setTimeStamp(timeReceived) }
         findViewById<Button>(R.id.btnTimeSent).setOnClickListener { setTimeStamp(timeSent) }
+        findViewById<Button>(R.id.btnGunsReady).setOnClickListener { setTimeStamp(gunsReady) }
+        findViewById<Button>(R.id.btnShot).setOnClickListener { setTimeStamp(shot) }
+        findViewById<Button>(R.id.btnRoundsComplete).setOnClickListener { setTimeStamp(roundsComplete) }
         findViewById<Button>(R.id.btnEndOfMission).setOnClickListener { setTimeStamp(endOfMission) }
 
         findViewById<Button>(R.id.btnSave).setOnClickListener { saveToCSV() }
@@ -91,22 +104,24 @@ class Fox1LoggerActivity : BaseActivity() {
         val recalc = spinnerRecalc.selectedItem.toString()
 
         val data = "${target}," +
-                "${tgtGrid.text}," +
-                "${tgtShape.text}," +
-                "${unitToFire.text}," +
                 "${numRounds.text}," +
                 "${typeRounds.text}," +
+                "${charge.text}, " +
+                "${fuze.text}, " +
+                "${unitToFire.text}," +
                 "${methodControl.text}," +
-                "${typeMission.text}," +
+                "${sheaf.text}," +
                 "${timeReceived.text}," +
                 "${timeSent.text}," +
+                "${gunsReady.text}," +
+                "${shot.text}," +
+                "${roundsComplete.text}," +
                 "${endOfMission.text}," +
-                "${howRcvd.text}" +
                 "${howSent}, " +
                 "${recalc}, " +
                 "${notes.text}\n"
         val callsign = intent.getStringExtra("CALLSIGN") ?: "default_callsign"
-        val filename = "${callsign}_${SimpleDateFormat("yyyyMMdd", Locale.getDefault()).format(Date())}.csv"
+        val filename = "${callsign}_${"Fox2"}_${SimpleDateFormat("yyyyMMdd", Locale.getDefault()).format(Date())}.csv"
 
         val contentResolver = contentResolver
 
@@ -150,7 +165,7 @@ class Fox1LoggerActivity : BaseActivity() {
     private fun writeDataToStream(outputStream: OutputStream, data: String, append: Boolean) {
         outputStream.bufferedWriter().use { writer ->
             if (!append) {
-                writer.append("Target Number,Grid,Shape,Unit to Fire,Number of Rounds,Type of Rounds,Method of Control,Mission Type,Time Received,Time Sent,End of Mission,How Rcvd,How Sent,RECALC,Notes\n")
+                writer.append("Target Number,Number of Rounds,Type of Rounds,Charge,Fuze,Unit to Fire,Method of Control,Sheaf,Time Received,Time Sent,Guns Ready/Laid,Shot,Rounds Complete,End of Mission,How Sent,RECALC,Notes\n")
             }
             writer.append(data)
         }
@@ -162,13 +177,13 @@ class Fox1LoggerActivity : BaseActivity() {
         typeRounds.setText("")
         unitToFire.setText("")
         methodControl.setText("")
-        tgtGrid.setText("")
+        sheaf.setText("")
         timeReceived.setText("")
         timeSent.setText("")
+        gunsReady.setText("")
+        shot.setText("")
+        roundsComplete.setText("")
         endOfMission.setText("")
-        howRcvd.setText("")
-        tgtShape.setText("")
-        typeMission.setText("")
         notes.setText("")
 
     }

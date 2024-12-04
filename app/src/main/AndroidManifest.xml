@@ -28,18 +28,14 @@
             android:name=".LogsActivity"
             android:exported="false" />
         <activity
-            android:name=".Fox1LoggerActivity"
+            android:name=".Fox1Activity"
             android:exported="false" />
         <activity
             android:name=".BaseActivity"
             android:exported="false" />
-
-        <!-- Declare MainActivity (Fox 2 Logger) -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="Fox 2 Logger"
-            android:theme="@style/AppTheme" />
+            android:name=".Fox2Activity"
+            android:exported="false" />
 
     </application>
 
