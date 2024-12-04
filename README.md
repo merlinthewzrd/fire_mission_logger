@@ -1,5 +1,7 @@
 Vampire Team Fire Mission Logger
 
+Check the latest release for the .APK to install on your Android device.
+
 This allows the capture of Fox 1 or Fox 2 reports on your phone.  There is no internet required.
 
 Every mission you save will be saved into a single file (.csv) for the day it is saved.  Fox 1s and Fox 2s are saved separately.
