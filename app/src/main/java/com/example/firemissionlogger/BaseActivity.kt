@@ -55,6 +55,7 @@ open class BaseActivity : AppCompatActivity() {
                         .setNegativeButton("No", null)
                         .create()
                     dialog.show()
+                    dialog.window?.setBackgroundDrawableResource(android.R.color.black)
                     dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getColor(color.white))
                     dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getColor(color.white))
 

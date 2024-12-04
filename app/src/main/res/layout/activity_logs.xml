@@ -7,7 +7,8 @@
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout
       android:layout_width="match_parent"
-      android:layout_height="match_parent">
+      android:layout_height="match_parent"
+      android:background="@color/bg">
 
     <!-- Toolbar for the top bar -->
     <androidx.appcompat.widget.Toolbar
@@ -22,8 +23,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="3"
-        android:paddingTop="60dp">
+        android:weightSum="2.5"
+        android:paddingTop="56dp">
 
     <!-- ListView to show CSV files, takes up the top 2/3 of the screen -->
     <ListView
@@ -64,6 +65,8 @@ android:layout_width="wrap_content"
 android:layout_height="match_parent"
 android:layout_gravity="start"
 android:fitsSystemWindows="true"
-app:menu="@menu/navigation_menu" />
+app:menu="@menu/navigation_menu"
+    android:background="@color/bg"
+    app:itemTextColor="@color/white" />
 
     </androidx.drawerlayout.widget.DrawerLayout>

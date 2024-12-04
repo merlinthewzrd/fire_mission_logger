@@ -7,4 +7,5 @@
     <color name="white">#FFFFFF</color>
     <color name="darkgray">#212121</color>
     <color name="button">#424242</color>
+    <color name="bg">#212121</color>
 </resources>

@@ -8,7 +8,8 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/bg">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -425,6 +426,8 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:menu="@menu/navigation_menu"
+        android:background="@color/bg"
+        app:itemTextColor="@color/white"
         tools:ignore="VisualLintBounds" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
