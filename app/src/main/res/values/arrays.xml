@@ -1,0 +1,11 @@
+<resources>
+    <string-array name="how_sent_options">
+        <item>DIG</item>
+        <item>VOICE</item>
+    </string-array>
+
+    <string-array name="recalc_options">
+        <item>No</item>
+        <item>Yes</item>
+    </string-array>
+</resources>

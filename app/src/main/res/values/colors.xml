@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="btntextblue">#00E5FF</color>
+    <color name="savegreen">#155215</color>
+    <color name="clearred">#710202</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="darkgray">#212121</color>
+    <color name="button">#424242</color>
+</resources>

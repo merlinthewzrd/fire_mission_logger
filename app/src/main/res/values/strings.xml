@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appname" translatable="false">Fire Mission Logger</string>
+    <string name="clear" translatable="false">Clear</string>
+    <string name="endofmission" translatable="false">End of Mission</string>
+    <string name="gunsready" translatable="false">Guns Ready/Laid</string>
+    <string name="roundscomplete" translatable="false">Rounds Complete</string>
+    <string name="savetocsv" translatable="false">Save to CSV</string>
+    <string name="shot" translatable="false">Shot</string>
+    <string name="timereceived" translatable="false">Time Received</string>
+    <string name="timesent" translatable="false">Time Sent</string>
+    <string name="methodofcontrol" translatable="false">Method of Control</string>
+    <string name="typeofrounds" translatable="false">Type of Rounds</string>
+    <string name="unittofire" translatable="false">Unit to Fire</string>
+    <string name="numberofrounds" translatable="false">Number of Rounds</string>
+    <string name="targetnumber" translatable="false">Target Number</string>
+    <string name="timehint">Time</string>
+    <string name="sheaf">Sheaf</string>
+    <string name="notes">Notes</string>
+    <string name="charge">Charge</string>
+    <string name="fuze">Fuze</string>
+    <string name="entercallsign">Enter Callsign</string>
+    <string name="fox1logger">FOX 1 Logger</string>
+    <string name="fox2logger">FOX 2 Logger</string>
+    <string name="logs">LOGS</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="startpage">Start Page</string>
+    <string name="howreceived">How Received</string>
+    <string name="grid">Grid</string>
+    <string name="shape">Shape</string>
+    <string name="typeofmission">Type of Mission</string>
+</resources>

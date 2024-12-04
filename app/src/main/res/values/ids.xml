@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="targetNumber" type="id" />
+    <item name="numRounds" type="id" />
+    <item name="typeRounds" type="id" />
+    <item name="unitToFire" type="id" />
+    <item name="methodControl" type="id" />
+    <item name="timeReceived" type="id" />
+    <item name="timeSent" type="id" />
+    <item name="gunsReady" type="id" />
+    <item name="shot" type="id" />
+    <item name="roundsComplete" type="id" />
+    <item name="endOfMission" type="id" />
+    <item name="btnTimeReceived" type="id" />
+    <item name="btnTimeSent" type="id" />
+    <item name="btnGunsReady" type="id" />
+    <item name="btnShot" type="id" />
+    <item name="btnRoundsComplete" type="id" />
+    <item name="btnEndOfMission" type="id" />
+    <item name="btnSave" type="id" />
+    <item name="btnClear" type="id" />
+    <item name="callsignInput" type="id" />
+    <item name="btnFox1Logger" type="id" />
+    <item name="btnFox2Logger" type="id" />
+    <item name="btnLogs" type="id" />
+    <item name="nav_fox1_logger" type="id" />
+    <item name="nav_fox2_logger" type="id" />
+    <item name="nav_logs" type="id" />
+    <item name="nav_start" type="id" />
+    <item name="toolbar" type="id" />
+    <item name="callsign" type="id" />
+    <item name="tgtShape" type="id" />
+    <item name="typeMission" type="id" />
+    <item name="tgtGrid" type="id" />
+    <item name="howRcvd" type="id" />
+</resources>

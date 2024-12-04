@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    android:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:paddingTop="@android:dimen/app_icon_size"
+    android:weightSum="1"
+    android:gravity="center">
+
+    <!-- Save and Clear Buttons -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.9"
+        android:fillViewport="true"
+        android:paddingTop="@android:dimen/notification_large_icon_height"
+        android:layout_marginTop="@android:dimen/app_icon_size">
+
+        <!-- Target Number and Number of Rounds -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Target Number Field -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/targetNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/targetnumber"
+                    android:inputType="textCapCharacters"
+                    android:maxWidth="320dp"
+                    android:textColorHint="@color/white"
+                    tools:ignore="Autofill,TextFields,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+
+                <!-- Number of Rounds Field -->
+                <EditText
+                    android:id="@+id/numRounds"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/numberofrounds"
+                    android:inputType="number"
+                    android:maxWidth="320dp"
+                    android:textColorHint="@color/white"
+                    tools:ignore="Autofill,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <!-- Type of Rounds and Unit to Fire -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Type of Rounds Field -->
+                <EditText
+                    android:id="@+id/typeRounds"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/typeofrounds"
+                    android:inputType="textCapCharacters"
+                    android:maxWidth="320dp"
+                    android:textColorHint="@color/white"
+                    tools:ignore="Autofill,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+
+                <!-- Unit to Fire Field -->
+                <EditText
+                    android:id="@+id/unitToFire"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/unittofire"
+                    android:inputType="textCapCharacters"
+                    android:maxWidth="320dp"
+                    android:textColorHint="@color/white"
+                    tools:ignore="Autofill,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <!-- Charge and Fuze -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Charge Field -->
+                <EditText
+                    android:id="@+id/charge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/charge"
+                    android:inputType="textCapCharacters"
+                    android:maxWidth="320dp"
+                    android:textColorHint="@color/white"
+                    tools:ignore="Autofill,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+
+                <!-- Fuze Field -->
+                <EditText
+                    android:id="@+id/fuze"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/fuze"
+                    android:inputType="textCapCharacters"
+                    android:maxWidth="320dp"
+                    android:textColorHint="@color/white"
+                    tools:ignore="Autofill,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <!-- Method of Control and Sheaf -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Method of Control Field -->
+                <EditText
+                    android:id="@+id/methodControl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/methodofcontrol"
+                    android:inputType="textCapCharacters"
+                    android:maxWidth="320dp"
+                    android:textColorHint="@color/white"
+                    tools:ignore="Autofill,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+
+                <!-- Sheaf Field -->
+                <EditText
+                    android:id="@+id/sheaf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/sheaf"
+                    android:inputType="textCapCharacters"
+                    android:maxWidth="320dp"
+                    android:textColorHint="@color/white"
+                    tools:ignore="Autofill,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <!-- First Row of Buttons and Time Fields -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Time Received -->
+                <Button
+                    android:id="@+id/btnTimeReceived"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/button"
+                    android:maxLines="2"
+                    android:padding="8dp"
+                    android:text="@string/timereceived"
+                    android:textColor="@color/btntextblue"
+                    android:textSize="13sp"
+                    tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize" />
+
+                <!-- Time Received Text -->
+                <EditText
+                    android:id="@+id/timeReceived"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:hint="@string/timehint"
+                    android:inputType="time"
+                    android:maxWidth="320dp"
+                    android:minHeight="48dp"
+                    android:textColorHint="@color/white"
+                    tools:ignore="Autofill,DuplicateSpeakableTextCheck" />
+
+                <!-- Time Set -->
+                <Button
+                    android:id="@+id/btnTimeSent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/button"
+                    android:text="@string/timesent"
+                    android:textColor="@color/btntextblue"
+                    android:textSize="13sp"
+                    tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize" />
+
+                <!-- Time Sent Text -->
+                <EditText
+                    android:id="@+id/timeSent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:hint="@string/timehint"
+                    android:inputType="time"
+                    android:maxWidth="320dp"
+                    android:minHeight="48dp"
+                    android:textColorHint="@color/white"
+                    tools:ignore="Autofill,TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <!-- Second Row of Buttons and Time Fields -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Guns Ready/Laid -->
+                <Button
+                    android:id="@+id/btnGunsReady"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/button"
+                    android:maxLines="2"
+                    android:padding="1dp"
+                    android:text="@string/gunsready"
+                    android:textColor="@color/btntextblue"
+                    android:textSize="13sp"
+                    tools:ignore="VisualLintButtonSize" />
+
+                <!-- Guns Ready/Laid Text -->
+                <EditText
+                    android:id="@+id/gunsReady"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:hint="@string/timehint"
+                    android:inputType="time"
+                    android:maxWidth="320dp"
+                    android:minHeight="48dp"
+                    android:textColorHint="@color/white"
+                    tools:ignore="Autofill" />
+
+                <!-- Shot -->
+                <Button
+                    android:id="@+id/btnShot"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/button"
+                    android:text="@string/shot"
+                    android:textColor="@color/btntextblue"
+                    android:textSize="13sp"
+                    tools:ignore="VisualLintButtonSize" />
+
+                <!-- Shot Text -->
+                <EditText
+                    android:id="@+id/shot"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:hint="@string/timehint"
+                    android:inputType="time"
+                    android:maxWidth="320dp"
+                    android:minHeight="48dp"
+                    android:textColorHint="@color/white"
+                    tools:ignore="Autofill" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <!-- Third Row of Buttons and Time Fields -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Rounds Complete -->
+                <Button
+                    android:id="@+id/btnRoundsComplete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/button"
+                    android:maxLines="2"
+                    android:padding="6dp"
+                    android:text="@string/roundscomplete"
+                    android:textColor="@color/btntextblue"
+                    android:textSize="13sp"
+                    tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize" />
+
+                <!-- Rounds Complete Text -->
+                <EditText
+                    android:id="@+id/roundsComplete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:hint="@string/timehint"
+                    android:inputType="time"
+                    android:maxWidth="320dp"
+                    android:minHeight="48dp"
+                    android:textColorHint="@color/white"
+                    tools:ignore="Autofill" />
+
+                <!-- End of Mission -->
+                <Button
+                    android:id="@+id/btnEndOfMission"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/button"
+                    android:maxLines="2"
+                    android:padding="8dp"
+                    android:text="@string/endofmission"
+                    android:textColor="@color/btntextblue"
+                    android:textSize="13sp"
+                    tools:ignore="TouchTargetSizeCheck,VisualLintButtonSize" />
+
+                <!-- End of Mission Text -->
+                <EditText
+                    android:id="@+id/endOfMission"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:hint="@string/timehint"
+                    android:inputType="time"
+                    android:maxWidth="320dp"
+                    android:minHeight="48dp"
+                    android:textColorHint="@color/white"
+                    tools:ignore="Autofill" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <!-- How Sent Spinner -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="How Sent"
+                        android:textColor="@color/white"
+                        tools:ignore="HardcodedText" />
+
+                    <Spinner
+                        android:id="@+id/spinnerHowSent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:entries="@array/how_sent_options"
+                        android:spinnerMode="dropdown"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </LinearLayout>
+
+                <!-- Recalc Spinner -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recalc"
+                        android:textColor="@color/white"
+                        tools:ignore="HardcodedText" />
+
+                    <Spinner
+                        android:id="@+id/spinnerRecalc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/recalc_options"
+                        android:spinnerMode="dropdown"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </LinearLayout>
+            </LinearLayout>
+            <!-- Notes Field -->
+            <EditText
+                android:id="@+id/notes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/notes"
+                android:inputType="textMultiLine"
+                android:maxWidth="320dp"
+                android:minHeight="48dp"
+                android:singleLine="false"
+                android:textColorHint="@color/white"
+                tools:ignore="Autofill,VisualLintTextFieldSize" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/btnSave"
+            android:backgroundTint="@color/savegreen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxWidth="320dp"
+            android:text="@string/savetocsv"
+            android:textColor="@color/white"
+            android:layout_marginEnd="5dp"
+            tools:ignore="NestedWeights,TextContrastCheck,VisualLintButtonSize" />
+
+        <!-- Clear Button -->
+        <Button
+            android:id="@+id/btnClear"
+            android:backgroundTint="@color/clearred"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxWidth="320dp"
+            android:textColor="@color/white"
+            android:layout_marginStart="5dp"
+            android:text="@string/clear"
+            tools:ignore="VisualLintButtonSize" />
+    </LinearLayout>
+
+</LinearLayout>
+    <!-- Navigation Drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/navigation_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
